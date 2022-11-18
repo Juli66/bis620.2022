@@ -10,3 +10,5 @@ output: github_document
 
 [![R-CMD-check](https://github.com/Juli66/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/Juli66/bis620.2022/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
+
+
