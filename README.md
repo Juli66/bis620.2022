@@ -1,8 +1,5 @@
-------------------------------------------------------------------------
 
-output: github_document
-
-------------------------------------------------------------------------
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # bis620.2022
 
@@ -30,9 +27,13 @@ juli66/bis620.2022
 ## Example
 
 ``` r
+devtools::install_github("Scott-Zuo/bis620.2022")
+#> Skipping install of 'bis620.2022' from a github remote, the SHA1 (0c1bf68c) has not changed since last install.
+#>   Use `force = TRUE` to force installation
 library(bis620.2022)
 data(ukb_accel)
-accel_plot(ukb_accel[1:100, ])
+ukb_accel[1:100, ] |>
+  accel_plot()
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
