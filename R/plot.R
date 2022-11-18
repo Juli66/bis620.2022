@@ -13,15 +13,15 @@
 #' @export
 accel_plot <- function(x) {
   if ("time" %in% colnames(x)) {
-    col <- as.symbol("time")
+    col <- "time"
   } else if ("freq" %in% colnames(x)) {
-    col <- as.symbol("freq")
+    col <- "freq"
   } else {
     stop("A `time` or a `freq` column must appear in the data.")
   }
   x |>
     pivot_longer(-all_of(col)) |>
-    ggplot(aes(x = {{col}}, y = value)) +
-    geom_line() +
-    facet_grid(name ~ .)
+    ggplot(aes_string(x = col, y = "value")) +
+      geom_line() +
+      facet_grid(name ~ .)
 }
