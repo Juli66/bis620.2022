@@ -5,37 +5,57 @@
 
 <!-- badges: start -->
 
-[![test-coverage](https://github.com/Juli66/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg?branch=main)](https://github.com/Juli66/bis620.2022/actions/workflows/test-coverage.yaml)
-[![lint](https://github.com/Juli66/bis620.2022/actions/workflows/lint.yaml/badge.svg)](https://github.com/Juli66/bis620.2022/actions/workflows/lint.yaml)
-[![R-CMD-check](https://github.com/Juli66/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/Juli66/bis620.2022/actions/workflows/R-CMD-check.yaml)
-[![codecov](https://codecov.io/gh/Juli66/bis620.2022/branch/main/graph/badge.svg?token=JJ6DNAPCHY)](https://codecov.io/gh/Juli66/bis620.2022)
+[![R-CMD-check](https://github.com/CYorick/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CYorick/bis620.2022/actions/workflows/R-CMD-check.yaml)
+[![lint](https://github.com/CYorick/bis620.2022/actions/workflows/lint.yaml/badge.svg)](https://github.com/CYorick/bis620.2022/actions/workflows/lint.yaml)
+[![test-coverage](https://github.com/CYorick/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/CYorick/bis620.2022/actions/workflows/test-coverage.yaml)
 <!-- badges: end -->
 
-The goal of bis620.2022 is to visualize time series dataset And also
-including a functionality of spectral signature plot. The dataset
-ukb_accel included is from UKBiobank.
-
-## Test Coverage
-
-url:
-“<https://app.codecov.io/github/Juli66/bis620.2022/commit/d61fa729c212daac532c977e06ae9f12ec8d39f7>”
+The goal of bis620.2022 is to check the kb_accel data, and the package
+also includes functions that can plot the ukb_accel data with logarithm
+or without logarithm, with or without Fourier Transform.
 
 ## Installation
 
 You can install the development version of bis620.2022 from
-[GitHub](https://github.com/) with: <br> `install.packages("devtools")`
-<br> `devtools::install_github("juli66/bis620.2022")`
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("CYorick/bis620.2022")
+```
 
 ## Example
 
+This is a basic example which shows you how to solve a common problem:
+
 ``` r
-devtools::install_github("juli66/bis620.2022")
-#> Skipping install of 'bis620.2022' from a github remote, the SHA1 (539c6f64) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 library(bis620.2022)
-data(ukb_accel)
-ukb_accel[1:100, ] |>
-  accel_plot()
+## basic example code
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+What is special about using `README.Rmd` instead of just `README.md`?
+You can include R chunks like so:
+
+``` r
+summary(cars)
+#>      speed           dist       
+#>  Min.   : 4.0   Min.   :  2.00  
+#>  1st Qu.:12.0   1st Qu.: 26.00  
+#>  Median :15.0   Median : 36.00  
+#>  Mean   :15.4   Mean   : 42.98  
+#>  3rd Qu.:19.0   3rd Qu.: 56.00  
+#>  Max.   :25.0   Max.   :120.00
+```
+
+You’ll still need to render `README.Rmd` regularly, to keep `README.md`
+up-to-date. `devtools::build_readme()` is handy for this. You could also
+use GitHub Actions to re-render `README.Rmd` every time you push. An
+example workflow can be found here:
+<https://github.com/r-lib/actions/tree/v1/examples>.
+
+You can also embed plots, for example:
+
+<img src="man/figures/README-pressure-1.png" width="100%" />
+
+In that case, don’t forget to commit and push the resulting figure
+files, so they display on GitHub and CRAN.
